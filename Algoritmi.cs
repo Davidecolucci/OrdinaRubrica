@@ -112,7 +112,7 @@ public class Algoritmi
     //}
     //*/
 
-    ////METODO DI ORDINAMENTO INSERTIONSORT
+    ////METODO DI ORDINAMENTO MERGESORT
     //   
     //        int[] array = { 64, 25, 12, 22, 11 };
 

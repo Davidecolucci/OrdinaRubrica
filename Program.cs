@@ -48,7 +48,7 @@ public class RubricaContatti
                 var dati = riga.Split(',');
                 if (dati.Length == 4)
                 {
-                    string nominativo = $"{dati[0]} {dati[1]}";               //dati[0] + dati[1];
+                    string nominativo = $"{dati[0]} {dati[1]}";
                     nominativi.Add(nominativo);
                     rubrica[nominativo] = new[] { dati[2], dati[3] };
                 }
