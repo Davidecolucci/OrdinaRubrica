@@ -25,12 +25,20 @@ public class RubricaContatti
         Console.WriteLine($"Il Bubble Sort ci ha messo {Timer}");
 
         //Chiamata Selection Sort + Calcolo del tempo
-        Timer.Start();
+        Timer.Restart();
         Algoritmi.SelectionSort(nominativi);
         Timer.Stop();
 
         Console.WriteLine("Array ordinato con: Selection Sort");
         Console.WriteLine($"Il Selection Sort ci ha messo {Timer}");
+
+        //Chiamata Insertion Sort + Calcolo del tempo
+        Timer.Restart();
+        Algoritmi.InsertionSort(nominativi);
+        Timer.Stop();
+
+        Console.WriteLine("Array ordinato con: Insertion Sort");
+        Console.WriteLine($"Il Insertion Sort ci ha messo {Timer}");
 
         //EsportaContatti(nominativi);
     }
