@@ -78,39 +78,43 @@ public class Algoritmi
             Console.WriteLine(item);
         }
     }
+
+
+
+    //funzione Insertion
+     public static void InsertionSort(List<string> lista)
+     {
+        int n = lista.Count;
+        for (int i = 1; i < n; i++)
+        {
+            string chiave = lista[i];
+            int j = i - 1;
+
+            // Sposta gli elementi di lista[0..i-1] che sono maggiori di chiave
+            // a una posizione davanti alla loro posizione attuale
+            while (j >= 0 && string.Compare(lista[j], chiave) > 0)
+            {
+                lista[j + 1] = lista[j];
+                j--;
+            }
+            lista[j + 1] = chiave;
+        }
+     }
+
+
+
+
 }
 
-    ////METODO DI ORDINAMENTO INSERTIONSORT
-    //static void InsertionSort(int[] arr)
-    //{
-    //    int n = arr.Length;
 
-    //    for (int i = 1; i < n; i++)
-    //    {
-    //        int key = arr[i];
-    //        int j = i - 1;
 
-    //        // Move elements of arr[0..i-1], that are greater than key,
-    //        // to one position ahead of their current position
-    //        while (j >= 0 && arr[j] > key)
-    //        {
-    //            arr[j + 1] = arr[j];
-    //            j--;
-    //        }
-    //        arr[j + 1] = key;
-    //    }
-    //}
 
-    ///*
-    //static void PrintArray2(int[] arr)
-    //{
-    //    foreach (int value in arr)
-    //    {
-    //        Console.Write(value + " ");
-    //    }
-    //    Console.WriteLine();
-    //}
-    //*/
+
+
+
+
+
+   
 
     ////METODO DI ORDINAMENTO MERGESORT
     //   
