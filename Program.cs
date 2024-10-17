@@ -12,18 +12,27 @@ public class RubricaContatti
 
     static void Main()
     {
+        //CaricaContatti
         List<string> nominativi = CaricaContatti();
-        
-        Stopwatch Timer= new Stopwatch();
+
+        //Chiamata Bubble Sort + Calcolo del tempo
+        Stopwatch Timer = new Stopwatch();
         Timer.Start();
         Algoritmi.BubbleSort(nominativi);
         Timer.Stop();
-        
 
-        Console.WriteLine("Array ordinato con: Bubblesort");
-        Console.WriteLine($"Il Bubblesort ci ha messo {Timer}");
+        Console.WriteLine("Array ordinato con: Bubble Sort");
+        Console.WriteLine($"Il Bubble Sort ci ha messo {Timer}");
 
-        EsportaContatti(nominativi);
+        //Chiamata Selection Sort + Calcolo del tempo
+        Timer.Start();
+        Algoritmi.SelectionSort(nominativi);
+        Timer.Stop();
+
+        Console.WriteLine("Array ordinato con: Selection Sort");
+        Console.WriteLine($"Il Selection Sort ci ha messo {Timer}");
+
+        //EsportaContatti(nominativi);
     }
 
 
@@ -49,6 +58,7 @@ public class RubricaContatti
         return nominativi;
     }
 
+    /*
     static void EsportaContatti(List<string>nominativi)
     {
         string fileName = "RubricaOrdinata1.csv";
@@ -66,5 +76,5 @@ public class RubricaContatti
         File.WriteAllLines(fileName, righe);
         Console.WriteLine("Contatti esportati.");
     }
-
+    */
 }

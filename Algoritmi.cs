@@ -40,49 +40,45 @@ public class Algoritmi
         }
     }
 
-    
+
 
     ////METODO DI ORDINAMENTO SELECTIONSORT
 
-    //static void SelectionSort(int[] arr)
-    //{
-    //    int n = arr.Length;
+    public static void SelectionSort(List<string> Nominativi)
+    {
+        int n = Nominativi.Count;
 
-    //    for (int i = 0; i < n - 1; i++)
-    //    {
-    //        // Find the index of the minimum element in the unsorted part
-    //        int minIndex = i;
-    //        for (int j = i + 1; j < n; j++)
-    //        {
-    //            if (arr[j] < arr[minIndex])
-    //            {
-    //                minIndex = j;
-    //            }
-    //        }
+        for (int i = 0; i < n - 1; i++)
+        {
+            int minIndex = i;
 
-    //        // Swap the found minimum element with the first element
-    //        if (minIndex != i)
-    //        {
-    //            Swap(ref arr[minIndex], ref arr[i]);
-    //        }
-    //    }
-    //}
+            for (int j = i + 1; j < n; j++)
+            {
+                // Confronta le stringhe
+                if (string.Compare(Nominativi[j], Nominativi[minIndex]) < 0)
+                {
+                    minIndex = j;
+                }
+            }
 
-    //static void Swap(ref int a, ref int b)
-    //{
-    //    int temp = a;
-    //    a = b;
-    //    b = temp;
-    //}
+            // Scambia l'elemento corrente con il minimo trovato
+            if (minIndex != i)
+            {
+                string temp = Nominativi[i];
+                Nominativi[i] = Nominativi[minIndex];
+                Nominativi[minIndex] = temp;
+            }
+        }
+    }
 
-    //static void PrintArray(int[] arr)
-    //{
-    //    foreach (int value in arr)
-    //    {
-    //        Console.Write(value + " ");
-    //    }
-    //    Console.WriteLine();
-    //}
+    static void StampaArray(string[] array)
+    {
+        foreach (var item in array)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
 
     ////METODO DI ORDINAMENTO INSERTIONSORT
     //static void InsertionSort(int[] arr)
@@ -206,7 +202,7 @@ public class Algoritmi
 
 
 
-}
+
 
 
 
