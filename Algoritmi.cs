@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 public class Algoritmi
 {
-
-    //RubricaContatti Oggettorubrica = new RubricaContatti();
-
-
-
-
+        
     //METODO DI ORDINAMENTO BUBLESORT
     public static void BubbleSort(List<string> Nominativi)
     {
@@ -42,7 +37,7 @@ public class Algoritmi
 
 
 
-    ////METODO DI ORDINAMENTO SELECTIONSORT
+    //METODO DI ORDINAMENTO SELECTIONSORT
 
     public static void SelectionSort(List<string> Nominativi)
     {
@@ -70,20 +65,11 @@ public class Algoritmi
             }
         }
     }
+        
 
-    static void StampaArray(string[] array)
+    //METODO DI ORDINAMENTO INSERTION SORT
+    public static void InsertionSort(List<string> lista)
     {
-        foreach (var item in array)
-        {
-            Console.WriteLine(item);
-        }
-    }
-
-
-
-    //funzione Insertion
-     public static void InsertionSort(List<string> lista)
-     {
         int n = lista.Count;
         for (int i = 1; i < n; i++)
         {
@@ -99,109 +85,68 @@ public class Algoritmi
             }
             lista[j + 1] = chiave;
         }
-     }
+    }
 
 
+    //METODO DI ORDINAMENTO MERGE SORT
+    public static List<string> MergeSort(List<string> lista)
+    {
+        if (lista.Count <= 1)
+            return lista;
 
+        int mid = lista.Count / 2;
 
+        // Ordina la prima metà
+        var leftList = MergeSort(lista.GetRange(0, mid));
+        // Ordina la seconda metà
+        var rightList = MergeSort(lista.GetRange(mid, lista.Count - mid));
+
+        // Unisci le due metà
+        return Merge(leftList, rightList);
+    }
+
+    static List<string> Merge(List<string> leftList, List<string> rightList)
+    {
+        List<string> mergedList = new List<string>();
+        int i = 0, j = 0;
+
+        while (i < leftList.Count && j < rightList.Count)
+        {
+            if (string.Compare(leftList[i], rightList[j]) <= 0)
+            {
+                mergedList.Add(leftList[i++]);
+            }
+            else
+            {
+                mergedList.Add(rightList[j++]);
+            }
+        }
+
+        // Copia gli elementi rimanenti, se ce ne sono
+        while (i < leftList.Count)
+        {
+            mergedList.Add(leftList[i++]);
+        }
+
+        while (j < rightList.Count)
+        {
+            mergedList.Add(rightList[j++]);
+        }
+
+        return mergedList;
+    }
+
+    /*
+    static void Stampalista(string[] lista)
+    {
+        foreach (var item in lista)
+        {
+            Console.WriteLine(item);
+        }
+    }
+    */
 }
 
-
-
-
-
-
-
-
-
-   
-
-    ////METODO DI ORDINAMENTO MERGESORT
-    //   
-    //        int[] array = { 64, 25, 12, 22, 11 };
-
-    //        Console.WriteLine("Original array:");
-    //        PrintArray(array);
-
-    //        MergeSort(array, 0, array.Length - 1);
-
-    //        Console.WriteLine("Sorted array:");
-    //        PrintArray(array);
-    //    }
-
-    //    static void MergeSort(int[] arr, int left, int right)
-    //    {
-    //        if (left < right)
-    //        {
-    //            int mid = (left + right) / 2;
-
-    //            // Recursively sort the first half
-    //            MergeSort(arr, left, mid);
-    //            // Recursively sort the second half
-    //            MergeSort(arr, mid + 1, right);
-    //            // Merge the sorted halves
-    //            Merge(arr, left, mid, right);
-    //        }
-    //    
-
-    //    static void Merge(int[] arr, int left, int mid, int right)
-    //    {
-    //        int n1 = mid - left + 1;
-    //        int n2 = right - mid;
-
-    //        // Create temporary arrays
-    //        int[] L = new int[n1];
-    //        int[] R = new int[n2];
-
-    //        // Copy data to temporary arrays
-    //        Array.Copy(arr, left, L, 0, n1);
-    //        Array.Copy(arr, mid + 1, R, 0, n2);
-
-    //        // Merge the temporary arrays back into arr[left..right]
-    //        int i = 0, j = 0, k = left;
-
-    //        while (i < n1 && j < n2)
-    //        {
-    //            if (L[i] <= R[j])
-    //            {
-    //                arr[k] = L[i];
-    //                i++;
-    //            }
-    //            else
-    //            {
-    //                arr[k] = R[j];
-    //                j++;
-    //            }
-    //            k++;
-    //        }
-
-    //        // Copy remaining elements of L[] if any
-    //        while (i < n1)
-    //        {
-    //            arr[k] = L[i];
-    //            i++;
-    //            k++;
-    //        }
-
-    //        // Copy remaining elements of R[] if any
-    //        while (j < n2)
-    //        {
-    //            arr[k] = R[j];
-    //            j++;
-    //            k++;
-    //        }
-        
-
-    //    /*
-    //    static void PrintArray(int[] arr)
-    //    {
-    //        foreach (int value in arr)
-    //        {
-    //            Console.Write(value + " ");
-    //        }
-    //        Console.WriteLine();
-    //    }*/
-    //    }
 
 
 

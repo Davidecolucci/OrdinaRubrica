@@ -40,6 +40,16 @@ public class RubricaContatti
         Console.WriteLine("Array ordinato con: Insertion Sort");
         Console.WriteLine($"Il Insertion Sort ci ha messo {Timer}");
 
+        
+        //Chiamata Merge Sort + Calcolo del tempo
+        Timer.Restart();
+        Algoritmi.MergeSort(nominativi);
+        Timer.Stop();
+
+        Console.WriteLine("Array ordinato con: Merge Sort");
+        Console.WriteLine($"Il Merge Sort ci ha messo {Timer}");
+        
+
         //EsportaContatti(nominativi);
     }
 
