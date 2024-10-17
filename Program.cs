@@ -50,7 +50,7 @@ public class RubricaContatti
         Console.WriteLine($"Il Merge Sort ci ha messo {Timer}");
         
 
-        //EsportaContatti(nominativi);
+        EsportaContatti(nominativi);
     }
 
 
@@ -76,7 +76,7 @@ public class RubricaContatti
         return nominativi;
     }
 
-    /*
+    
     static void EsportaContatti(List<string>nominativi)
     {
         string fileName = "RubricaOrdinata1.csv";
@@ -94,5 +94,5 @@ public class RubricaContatti
         File.WriteAllLines(fileName, righe);
         Console.WriteLine("Contatti esportati.");
     }
-    */
+    
 }
