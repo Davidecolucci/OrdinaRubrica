@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 public class Algoritmi
 {
         
-    //METODO DI ORDINAMENTO BUBLESORT
+    //METODO DI ORDINAMENTO BUBBLESORT
     public static void BubbleSort(List<string> Nominativi)
     {
         int n = Nominativi.Count;
@@ -36,9 +36,7 @@ public class Algoritmi
     }
 
 
-
     //METODO DI ORDINAMENTO SELECTIONSORT
-
     public static void SelectionSort(List<string> Nominativi)
     {
         int n = Nominativi.Count;
@@ -92,7 +90,9 @@ public class Algoritmi
     public static List<string> MergeSort(List<string> lista)
     {
         if (lista.Count <= 1)
+        {
             return lista;
+        }
 
         int mid = lista.Count / 2;
 
@@ -135,16 +135,6 @@ public class Algoritmi
 
         return mergedList;
     }
-
-    /*
-    static void Stampalista(string[] lista)
-    {
-        foreach (var item in lista)
-        {
-            Console.WriteLine(item);
-        }
-    }
-    */
 }
 
 

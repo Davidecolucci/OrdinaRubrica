@@ -1,15 +1,9 @@
-﻿
-using System.Diagnostics;
-
+﻿using System.Diagnostics;
 public class RubricaContatti
 {
     const string FilePath = "Rubrica2.csv";
-
     static Dictionary<string, string[]> rubrica = new Dictionary<string, string[]>();
     
-
-    
-
     static void Main()
     {
         //CaricaContatti
@@ -18,7 +12,7 @@ public class RubricaContatti
         //Chiamata Bubble Sort + Calcolo del tempo
         Stopwatch Timer = new Stopwatch();
         Timer.Start();
-        Algoritmi.BubbleSort(nominativi);
+        Algoritmi.BubbleSort(CaricaContatti());
         Timer.Stop();
         TimeSpan TimerBubble = Timer.Elapsed;
 
@@ -27,7 +21,7 @@ public class RubricaContatti
 
         //Chiamata Selection Sort + Calcolo del tempo
         Timer.Restart();
-        Algoritmi.SelectionSort(nominativi);
+        Algoritmi.SelectionSort(CaricaContatti());
         Timer.Stop();
         TimeSpan TimerSelection = Timer.Elapsed;
 
@@ -36,7 +30,7 @@ public class RubricaContatti
 
         //Chiamata Insertion Sort + Calcolo del tempo
         Timer.Restart();
-        Algoritmi.InsertionSort(nominativi);
+        Algoritmi.InsertionSort(CaricaContatti());
         Timer.Stop();
         TimeSpan TimerInsertion = Timer.Elapsed;
 
@@ -46,7 +40,7 @@ public class RubricaContatti
         
         //Chiamata Merge Sort + Calcolo del tempo
         Timer.Restart();
-        List<string> nominativiMerge =Algoritmi.MergeSort(nominativi);     // AGGIUNGI List<string> nominativiMerge a tutti
+        List<string> nominativiOrdinati = Algoritmi.MergeSort(nominativi);
         Timer.Stop();
         TimeSpan TimerMerge = Timer.Elapsed;
 
@@ -68,14 +62,13 @@ public class RubricaContatti
         }
         Console.WriteLine($"\n L'algoritmo di benchmark più efficiente è: {nomi[indiceMinimo]} con un tempo di: {Tempi[indiceMinimo]}");
 
-        EsportaContatti(nominativi);
+        EsportaContatti(nominativiOrdinati);
     }
-
 
 
     static List<string> CaricaContatti()
     {
-        List<string> nominativi = [];
+        List<string> nominativi = new List<string>();
         if (File.Exists(FilePath))
         {
             var righe = File.ReadAllLines(FilePath);
@@ -97,7 +90,7 @@ public class RubricaContatti
         
     static void EsportaContatti(List<string>nominativi)
     {
-        string fileName = "RubricaOrdinata1.csv";
+        string fileName = "RubricaOrdinata.csv";
 
         var righe = new List<string>();
 
@@ -112,5 +105,4 @@ public class RubricaContatti
         File.WriteAllLines(fileName, righe);
         Console.WriteLine("\nContatti esportati.");
     }
-    
 }
