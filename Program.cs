@@ -46,7 +46,7 @@ public class RubricaContatti
         
         //Chiamata Merge Sort + Calcolo del tempo
         Timer.Restart();
-        Algoritmi.MergeSort(nominativi);
+        List<string> nominativiMerge =Algoritmi.MergeSort(nominativi);     // AGGIUNGI List<string> nominativiMerge a tutti
         Timer.Stop();
         TimeSpan TimerMerge = Timer.Elapsed;
 
@@ -69,7 +69,8 @@ public class RubricaContatti
         Console.WriteLine($"\n L'algoritmo di benchmark più efficiente è: {nomi[indiceMinimo]} con un tempo di: {Tempi[indiceMinimo]}");
 
 
-        EsportaContatti(nominativi);
+        List<string> nominativiOrdinati = new List<string>[] { /*nominativiBubble, nominativiSelection, nominativiInsertion,*/ nominativiMerge }[indiceMinimo];
+        EsportaContatti(nominativiOrdinati);     //AGGIUNTA
     }
 
 
