@@ -68,8 +68,7 @@ public class RubricaContatti
         }
         Console.WriteLine($"\n L'algoritmo di benchmark più efficiente è: {nomi[indiceMinimo]} con un tempo di: {Tempi[indiceMinimo]}");
 
-
-        //EsportaContatti(nominativi);
+        EsportaContatti(nominativi);
     }
 
 
@@ -95,7 +94,7 @@ public class RubricaContatti
         return nominativi;
     }
 
-    /*
+        
     static void EsportaContatti(List<string>nominativi)
     {
         string fileName = "RubricaOrdinata1.csv";
@@ -111,7 +110,7 @@ public class RubricaContatti
             }
         }
         File.WriteAllLines(fileName, righe);
-        Console.WriteLine("Contatti esportati.");
+        Console.WriteLine("\nContatti esportati.");
     }
-    */
+    
 }
