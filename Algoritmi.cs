@@ -84,19 +84,19 @@ public class Algoritmi
 
 
     //METODO DI ORDINAMENTO MERGE SORT
-    public static List<string> MergeSort(List<string> lista)
+    public static List<string> MergeSort(List<string> Nominativi)
     {
-        if (lista.Count <= 1)
+        if (Nominativi.Count <= 1)
         {
-            return lista;
+            return Nominativi;
         }
 
-        int mid = lista.Count / 2;
+        int mid = Nominativi.Count / 2;
 
         // Ordina la prima metà
-        var leftList = MergeSort(lista.GetRange(0, mid));
+        var leftList = MergeSort(Nominativi.GetRange(0, mid));
         // Ordina la seconda metà
-        var rightList = MergeSort(lista.GetRange(mid, lista.Count - mid));
+        var rightList = MergeSort(Nominativi.GetRange(mid, Nominativi.Count - mid));
 
         // Unisci le due metà
         return Merge(leftList, rightList);
