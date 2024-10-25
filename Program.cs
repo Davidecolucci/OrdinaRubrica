@@ -8,6 +8,7 @@ public class RubricaContatti
     {
         //CaricaContatti
         List<string> nominativi = CaricaContatti();
+        Console.WriteLine("Contatti caricati dalla Rubrica2.csv.");
 
         //Chiamata Bubble Sort + Calcolo del tempo
         Stopwatch Timer = new Stopwatch();
@@ -82,7 +83,7 @@ public class RubricaContatti
                     rubrica[nominativo] = new[] { dati[2], dati[3] };
                 }
             }
-            Console.WriteLine("Contatti caricati dalla Rubrica2.csv.");
+            
         }
         return nominativi;
     }

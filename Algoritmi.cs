@@ -66,22 +66,19 @@ public class Algoritmi
         
 
     //METODO DI ORDINAMENTO INSERTION SORT
-    public static void InsertionSort(List<string> lista)
+    public static void InsertionSort(List<string> Nominativi)
     {
-        int n = lista.Count;
+        int n = Nominativi.Count;
         for (int i = 1; i < n; i++)
         {
-            string chiave = lista[i];
+            string chiave = Nominativi[i];
             int j = i - 1;
-
-            // Sposta gli elementi di lista[0..i-1] che sono maggiori di chiave
-            // a una posizione davanti alla loro posizione attuale
-            while (j >= 0 && string.Compare(lista[j], chiave) > 0)
+            while (j >= 0 && string.Compare(Nominativi[j], chiave) > 0)
             {
-                lista[j + 1] = lista[j];
+                Nominativi[j + 1] = Nominativi[j];
                 j--;
             }
-            lista[j + 1] = chiave;
+            Nominativi[j + 1] = chiave;
         }
     }
 
@@ -105,32 +102,32 @@ public class Algoritmi
         return Merge(leftList, rightList);
     }
 
-    static List<string> Merge(List<string> leftList, List<string> rightList)
+    static List<string> Merge(List<string> LeftListNominativi, List<string> RightListNominativi)
     {
         List<string> mergedList = new List<string>();
         int i = 0, j = 0;
 
-        while (i < leftList.Count && j < rightList.Count)
+        while (i < LeftListNominativi.Count && j < RightListNominativi.Count)
         {
-            if (string.Compare(leftList[i], rightList[j]) <= 0)
+            if (string.Compare(LeftListNominativi[i], RightListNominativi[j]) <= 0)
             {
-                mergedList.Add(leftList[i++]);
+                mergedList.Add(LeftListNominativi[i++]);
             }
             else
             {
-                mergedList.Add(rightList[j++]);
+                mergedList.Add(RightListNominativi[j++]);
             }
         }
 
         // Copia gli elementi rimanenti, se ce ne sono
-        while (i < leftList.Count)
+        while (i < LeftListNominativi.Count)
         {
-            mergedList.Add(leftList[i++]);
+            mergedList.Add(LeftListNominativi[i++]);
         }
 
-        while (j < rightList.Count)
+        while (j < RightListNominativi.Count)
         {
-            mergedList.Add(rightList[j++]);
+            mergedList.Add(RightListNominativi[j++]);
         }
 
         return mergedList;
