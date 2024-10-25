@@ -94,12 +94,12 @@ public class Algoritmi
         int mid = Nominativi.Count / 2;
 
         // Ordina la prima metà
-        var leftList = MergeSort(Nominativi.GetRange(0, mid));
+        var LeftListNominativi = MergeSort(Nominativi.GetRange(0, mid));
         // Ordina la seconda metà
-        var rightList = MergeSort(Nominativi.GetRange(mid, Nominativi.Count - mid));
+        var RightListNominativi = MergeSort(Nominativi.GetRange(mid, Nominativi.Count - mid));
 
         // Unisci le due metà
-        return Merge(leftList, rightList);
+        return Merge(LeftListNominativi, RightListNominativi);
     }
 
     static List<string> Merge(List<string> LeftListNominativi, List<string> RightListNominativi)
